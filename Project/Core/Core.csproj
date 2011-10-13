@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{8BD52B95-EB55-47BE-B97D-E634935DF9BA}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Aimirim.iView</RootNamespace>
+    <AssemblyName>Aimirim.iView</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkProfile />
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\Romis Fava\Dados de aplicativos\ICSharpCode/SharpDevelop4.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <OutputPath>..\..\..\..\SharpDevelop4.1\AddIns\ProjectScout\iViewBinding\</OutputPath>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <RunSourceAnalysis>False</RunSourceAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>x86</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Src\Gui\Behaviors\Allow\AllowBehavior.cs" />
+    <Compile Include="Src\Gui\Behaviors\Image\ImageBehavior.cs" />
+    <Compile Include="Src\Gui\Behaviors\Image\ImageTable.cs" />
+    <Compile Include="Src\Gui\Behaviors\Image\ImageTableCollection.cs" />
+    <Compile Include="Src\Gui\Behaviors\Image\ImageTableCollectionConverter.cs" />
+    <Compile Include="Src\Gui\Behaviors\Image\ImageTableCollectionPropertyDescriptor.cs" />
+    <Compile Include="Src\Gui\Behaviors\Image\ImageTableConverter.cs" />
+    <Compile Include="Src\Gui\Components\iAlarm\iAlarm.cs" />
+    <Compile Include="Src\Gui\Components\iAlarm\iAlarm.Designer.cs">
+      <DependentUpon>iAlarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\Components\iCheckBox\iCheckBox.cs" />
+    <Compile Include="Src\Gui\Components\iCheckBox\iCheckBoxAnimotion.cs" />
+    <Compile Include="Src\Gui\Behaviors\AbstractBehavior.cs" />
+    <Compile Include="Src\Gui\Behaviors\AbstractAnimotion.cs" />
+    <Compile Include="Src\Gui\Behaviors\BehaviorConverter.cs" />
+    <Compile Include="Src\Gui\Behaviors\Color\ColorBehavior.cs" />
+    <Compile Include="Src\Gui\Behaviors\Color\ColorTable.cs" />
+    <Compile Include="Src\Gui\Behaviors\Color\ColorTableCollection.cs" />
+    <Compile Include="Src\Gui\Behaviors\Color\ColorTableCollectionConverter.cs" />
+    <Compile Include="Src\Gui\Behaviors\Color\ColorTableCollectionPropertyDescriptor.cs" />
+    <Compile Include="Src\Gui\Behaviors\Color\ColorTableConverter.cs" />
+    <Compile Include="Src\Gui\Behaviors\Fill\Editor\FillEditor.cs" />
+    <Compile Include="Src\Gui\Behaviors\Fill\Editor\FillForm.cs" />
+    <Compile Include="Src\Gui\Behaviors\Fill\Editor\FillForm.Designer.cs">
+      <DependentUpon>FillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\Behaviors\Fill\EnumDirection.cs" />
+    <Compile Include="Src\Gui\Behaviors\Fill\FillBehavior.cs" />
+    <Compile Include="Src\Gui\Behaviors\IBehavior.cs" />
+    <Compile Include="Src\Gui\Behaviors\Parser.cs" />
+    <Compile Include="Src\Gui\Behaviors\Text\Editor\TextEditor.cs" />
+    <Compile Include="Src\Gui\Behaviors\Text\Editor\TextForm.cs" />
+    <Compile Include="Src\Gui\Behaviors\Text\Editor\TextForm.Designer.cs" />
+    <Compile Include="Src\Gui\Behaviors\Text\TextBehavior.cs" />
+    <Compile Include="Src\Gui\Behaviors\Text\TextTable.cs" />
+    <Compile Include="Src\Gui\Behaviors\Text\TextTableCollection.cs" />
+    <Compile Include="Src\Gui\Behaviors\Text\TextTableCollectionConverter.cs" />
+    <Compile Include="Src\Gui\Behaviors\Text\TextTableCollectionPropertyDescriptor.cs" />
+    <Compile Include="Src\Gui\Behaviors\Text\TextTableConverter.cs" />
+    <Compile Include="Src\Gui\Behaviors\Transparency\TransparencyBehavior.cs" />
+    <Compile Include="Src\Gui\Behaviors\Visibility\VisibilityBehavior.cs" />
+    <Compile Include="Src\Gui\Components\iButton\iButton.cs" />
+    <Compile Include="Src\Gui\Components\iButton\iButton.Designer.cs">
+      <DependentUpon>iButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\Components\iButton\iButtonAnimotion.cs" />
+    <Compile Include="Src\Gui\Components\iComboBox\iComboBox.cs" />
+    <Compile Include="Src\Gui\Components\iComboBox\iComboBoxAnimotion.cs" />
+    <Compile Include="Src\Gui\Components\iGroupBox\iGroupBox.cs" />
+    <Compile Include="Src\Gui\Components\iGroupBox\iGroupBoxAnimotion.cs" />
+    <Compile Include="Src\Gui\Components\iLabel\iLabelAnimotion.cs" />
+    <Compile Include="Src\Gui\Components\iLabel\iLabel.cs" />
+    <Compile Include="Src\Gui\Components\iMaskedTextBox\iMaskedTextBox.cs" />
+    <Compile Include="Src\Gui\Components\iMaskedTextBox\iMaskedTextBoxAnimotion.cs" />
+    <Compile Include="Src\Gui\Components\iPanel\iPanelAnimotion.cs" />
+    <Compile Include="Src\Gui\Components\iPanel\iPanel.cs" />
+    <Compile Include="Src\Gui\Components\iPictureBox\iPictureBoxAnimotion.cs" />
+    <Compile Include="Src\Gui\Components\iPictureBox\iPictureBox.cs" />
+    <Compile Include="Src\Gui\Components\iReport\iReport.cs" />
+    <Compile Include="Src\Gui\Components\iReport\iReport.Designer.cs">
+      <DependentUpon>iReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\Components\iTextBox\iTextBoxAnimotion.cs" />
+    <Compile Include="Src\Gui\Components\iTextBox\iTextBox.cs" />
+    <Compile Include="Src\Gui\Components\iTrend\EnumTrendMode.cs" />
+    <Compile Include="Src\Gui\Components\iTrend\Grid\iPen.cs" />
+    <Compile Include="Src\Gui\Components\iTrend\Grid\iPenCollection.cs" />
+    <Compile Include="Src\Gui\Components\iTrend\Grid\iPenCollectionConverter.cs" />
+    <Compile Include="Src\Gui\Components\iTrend\Grid\iPenCollectionPropertyDescriptor.cs" />
+    <Compile Include="Src\Gui\Components\iTrend\Grid\iPenConverter.cs" />
+    <Compile Include="Src\Gui\Components\iTrend\iTrend.cs" />
+    <Compile Include="Src\Gui\Components\iTrend\iTrend.Designer.cs">
+      <DependentUpon>iTrend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\Driver\IDriverControl.cs" />
+    <Compile Include="Src\Gui\Driver\OPC\OpcUserControl.cs" />
+    <Compile Include="Src\Gui\Driver\OPC\OpcUserControl.Designer.cs">
+      <DependentUpon>OpcUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\Driver\Sim\SimUserControl.cs" />
+    <Compile Include="Src\Gui\Driver\Sim\SimUserControl.Designer.cs">
+      <DependentUpon>SimUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\Driver\WCF\WcfUserControl.cs" />
+    <Compile Include="Src\Gui\Driver\WCF\WcfUserControl.Designer.cs">
+      <DependentUpon>WcfUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\TagGroup\IFrmTagGroup.cs" />
+    <Compile Include="Src\Services\Alarm\AbstractAlarm.cs" />
+    <Compile Include="Src\Services\Alarm\AlarmManager.cs" />
+    <Compile Include="Src\Services\Alarm\Analog\AlarmAnalog.cs" />
+    <Compile Include="Src\Services\Alarm\Digital\AlarmDigital.cs" />
+    <Compile Include="Src\Services\Alarm\IAlarm.cs" />
+    <Compile Include="Src\Services\DataAccess\AbstractDriver.cs" />
+    <Compile Include="Src\Services\DataAccess\IDriver.cs" />
+    <Compile Include="Src\Services\DataAccess\DriverManager.cs" />
+    <Compile Include="Src\Services\DataAccess\DataChangedEventArgs.cs" />
+    <Compile Include="Src\Services\DataAccess\DataChangedEventHandler.cs" />
+    <Compile Include="Src\Services\DataAccess\Opc\OpcDriver.cs" />
+    <Compile Include="Src\Services\DataAccess\Opc\OpcAddress.cs" />
+    <Compile Include="Src\Services\DataAccess\Sim\SimAddress.cs" />
+    <Compile Include="Src\Services\DataAccess\Sim\SimDriver.cs" />
+    <Compile Include="Src\Services\DataAccess\Wcf\Reference.cs" />
+    <Compile Include="Src\Services\DataAccess\Wcf\WcfDriver.cs" />
+    <Compile Include="Src\Services\DataSource\DataSourceManager.cs" />
+    <Compile Include="Src\Services\DataSource\EnumDataSourceType.cs" />
+    <Compile Include="Src\Services\Security\SecurityManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Src\Services\ServiceManager.cs" />
+    <Compile Include="Src\Services\Tag\Analog\AnalogTagConfigurator.cs" />
+    <Compile Include="Src\Services\Tag\Analog\AnalogTagConfigurator.Designer.cs">
+      <DependentUpon>AnalogTagConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Services\Tag\Analog\AnalogTagListConfigurator.cs" />
+    <Compile Include="Src\Services\Tag\Analog\AnalogTagListConfigurator.Designer.cs">
+      <DependentUpon>AnalogTagListConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Services\Tag\Analog\SignalCondition16383.cs" />
+    <Compile Include="Src\Services\Tag\Analog\TagAnalog.cs" />
+    <Compile Include="Src\Services\Tag\Digital\DigitalTagConfigurator.cs" />
+    <Compile Include="Src\Services\Tag\Digital\DigitalTagConfigurator.Designer.cs">
+      <DependentUpon>DigitalTagConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Services\Tag\Digital\DigitalTagListConfigurator.cs" />
+    <Compile Include="Src\Services\Tag\Digital\DigitalTagListConfigurator.Designer.cs">
+      <DependentUpon>DigitalTagListConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Services\Tag\EnumTagType.cs" />
+    <Compile Include="Src\Services\Tag\IHistorical.cs" />
+    <Compile Include="Src\Services\Tag\ISignalCondition.cs" />
+    <Compile Include="Src\Services\Tag\ITag.cs" />
+    <Compile Include="Src\Services\Tag\Digital\TagDigital.cs" />
+    <Compile Include="Src\Services\Tag\DefaultTagConfigurator.cs" />
+    <Compile Include="Src\Services\Tag\DefaultTagConfigurator.Designer.cs">
+      <DependentUpon>DefaultTagConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Services\Tag\AbstractTag.cs" />
+    <Compile Include="Src\Services\Tag\Sql\SqlTagConfigurator.cs" />
+    <Compile Include="Src\Services\Tag\Sql\SqlTagConfigurator.Designer.cs">
+      <DependentUpon>SqlTagConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Services\Tag\Sql\TagSql.cs" />
+    <Compile Include="Src\Services\Tag\TagManager.cs" />
+    <Compile Include="Src\Services\WCF\IMessage.cs" />
+    <Compile Include="Src\Services\WCF\IMessageCallback.cs" />
+    <Compile Include="Src\Services\WCF\MessageService.cs" />
+    <Compile Include="Src\Services\WCF\WcfHost.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Recycle" />
+    <Folder Include="Src\Gui\Behaviors\Image" />
+    <Folder Include="Src\Gui\Behaviors\Allow" />
+    <Folder Include="Src\Gui\Components" />
+    <Folder Include="Src\Gui\Components\iCheckBox" />
+    <Folder Include="Src\Gui\Behaviors" />
+    <Folder Include="Src\Gui\Behaviors\Color" />
+    <Folder Include="Src\Gui\Behaviors\Fill" />
+    <Folder Include="Src\Gui\Behaviors\Fill\Editor" />
+    <Folder Include="Src\Gui\Behaviors\Transparency" />
+    <Folder Include="Src\Gui\Behaviors\Text" />
+    <Folder Include="Src\Gui\Behaviors\Text\Editor" />
+    <Folder Include="Src\Gui\Behaviors\Visibility" />
+    <Folder Include="Src\Gui\Components\iButton" />
+    <Folder Include="Src\Gui\Components\iLabel" />
+    <Folder Include="Src\Gui\Components\iPanel" />
+    <Folder Include="Src\Gui\Components\iTextBox" />
+    <Folder Include="Src\Gui\Components\iPictureBox" />
+    <Folder Include="Src\Gui\Components\iGroupBox" />
+    <Folder Include="Src\Gui" />
+    <Folder Include="Src\Gui\Components\iMaskedTextBox" />
+    <Folder Include="Src\Gui\Components\iComboBox" />
+    <Folder Include="Src\Gui\Components\iTrend" />
+    <Folder Include="Src\Gui\Components\iTrend\Grid" />
+    <Folder Include="Src\Gui\Components\iReport" />
+    <Folder Include="Src\Gui\Components\iAlarm" />
+    <Folder Include="Src\Gui\Driver" />
+    <Folder Include="Src\Gui\Driver\WCF" />
+    <Folder Include="Src\Gui\Driver\OPC" />
+    <Folder Include="Src\Gui\Driver\Sim" />
+    <Folder Include="Src\Gui\TagGroup" />
+    <Folder Include="Src\Services\Alarm\Analog" />
+    <Folder Include="Src\Services\Alarm\Digital" />
+    <Folder Include="Src\Services\DataAccess" />
+    <Folder Include="Src\Services\DataAccess\Wcf" />
+    <Folder Include="Src\Services\DataAccess\Opc" />
+    <Folder Include="Src\Services\DataAccess\Sim" />
+    <Folder Include="Src\Services\DataSource" />
+    <Folder Include="Src\Services\Alarm" />
+    <Folder Include="Src\Services\WCF" />
+    <Folder Include="Src\Services\Security" />
+    <Folder Include="Src\Services\Tag" />
+    <Folder Include="Src\Services\Tag\Digital" />
+    <Folder Include="Src\Services\Tag\Analog" />
+    <Folder Include="Src\Services\Tag\Sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Src\Gui\Behaviors\Fill\Editor\FillForm.resx">
+      <DependentUpon>FillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\Behaviors\Text\Editor\TextForm.resx" />
+    <EmbeddedResource Include="Src\Gui\Components\iAlarm\iAlarm.resx">
+      <DependentUpon>iAlarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\Components\iButton\iButton.resx">
+      <DependentUpon>iButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\Components\iReport\iReport.resx">
+      <DependentUpon>iReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\Components\iTrend\iTrend.resx">
+      <DependentUpon>iTrend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\Driver\OPC\OpcUserControl.resx">
+      <DependentUpon>OpcUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\Driver\Sim\SimUserControl.resx">
+      <DependentUpon>SimUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\Driver\WCF\WcfUserControl.resx">
+      <DependentUpon>WcfUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Services\Tag\Analog\AnalogTagConfigurator.resx">
+      <DependentUpon>AnalogTagConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Services\Tag\Analog\AnalogTagListConfigurator.resx">
+      <DependentUpon>AnalogTagListConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Services\Tag\DefaultTagConfigurator.resx">
+      <DependentUpon>DefaultTagConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Services\Tag\Digital\DigitalTagConfigurator.resx">
+      <DependentUpon>DigitalTagConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Services\Tag\Digital\DigitalTagListConfigurator.resx">
+      <DependentUpon>DigitalTagListConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Services\Tag\Sql\SqlTagConfigurator.resx">
+      <DependentUpon>SqlTagConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\COM Wrapper\OPC NET COM Wrapper.csproj">
+      <Project>{170A5455-A090-4F26-810F-15F71BBF87E6}</Project>
+      <Name>OPC NET COM Wrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OPC NET API\OPC NET API.csproj">
+      <Project>{98B6E5A1-6FED-434E-B568-9C68D5F9959C}</Project>
+      <Name>OPC NET API</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

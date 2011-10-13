@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Template author="Romis Fava" version="1.0">
+	
+	<Config
+		  name        = "DataSourceFile"
+		  icon        = "Icons.16x16.SharpQuery.ViewsRoot"
+		  category    = "Aimirim"
+		  defaultname = "DataSource${Number}.dsf"
+		  language    = "Default"/>
+	 
+	<Description>${res:Templates.File.Text.EmptyTextFile.Description}</Description>
+
+	<Files>
+		<File name="${FullName}" language="Default" CopyToOutputDirectory="Always"><![CDATA[<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+</DocumentElement>
+]]></File>
+	</Files>
+	
+	<AdditionalOptions/>
+</Template>

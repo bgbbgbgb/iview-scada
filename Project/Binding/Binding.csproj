@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{7A5360E2-642B-4C4B-80DE-2C4AF7CA20AD}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>iViewBinding</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\Romis Fava\Dados de aplicativos\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>103284736</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <SignAssembly>false</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+    <AssemblyOriginatorKeyFile>Aimirim.Bindings.snk</AssemblyOriginatorKeyFile>
+    <RootNamespace>Aimirim.iView</RootNamespace>
+    <TargetFrameworkProfile />
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <OutputPath>bin\Debug</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="FormsDesigner">
+      <HintPath>..\SharpDevelop\FormsDesigner.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.Core">
+      <HintPath>..\SharpDevelop\ICSharpCode.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.Core.WinForms">
+      <HintPath>..\SharpDevelop\ICSharpCode.Core.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory">
+      <HintPath>..\SharpDevelop\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpDevelop">
+      <HintPath>..\SharpDevelop\ICSharpCode.SharpDevelop.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpDevelop.Dom">
+      <HintPath>..\SharpDevelop\ICSharpCode.SharpDevelop.Dom.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpDevelop.Sda">
+      <HintPath>..\SharpDevelop\ICSharpCode.SharpDevelop.Sda.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpDevelop.Widgets">
+      <HintPath>..\SharpDevelop\ICSharpCode.SharpDevelop.Widgets.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Engine" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Src\Commands\NewAimTagGroupToProject.cs" />
+    <Compile Include="Src\Commands\FrmNewAimTagGroup.cs" />
+    <Compile Include="Src\Commands\FrmNewAimTagGroup.Designer.cs">
+      <DependentUpon>FrmNewAimTagGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Commands\NewAimItemToProjectBaseCommand.cs" />
+    <Compile Include="Src\Commands\AddAimTagGroupToProject.cs" />
+    <Compile Include="Src\Commands\AddAimItemToProjectBaseCommand.cs" />
+    <Compile Include="Src\Commands\SetAsDefaultCommand.cs" />
+    <Compile Include="Src\Conditions\FileStateCondition.cs" />
+    <Compile Include="Src\DisplayBinding\AimDialogDesigner.cs" />
+    <Compile Include="Src\DisplayBinding\AimDialogDesignerDisplayBinding.cs" />
+    <Compile Include="Src\DisplayBinding\AppConfigDisplayBinding.cs" />
+    <Compile Include="Src\DisplayBinding\AppConfigSecundaryDisplayBinding.cs" />
+    <Compile Include="Src\DisplayBinding\DataSourceDisplayBinding.cs" />
+    <Compile Include="Src\DisplayBinding\TagGroupDisplayBinding.cs" />
+    <Compile Include="Src\DisplayBinding\DriverDisplayBinding.cs" />
+    <Compile Include="Src\DisplayBinding\SecurityDisplayBinding.cs" />
+    <Compile Include="Src\DisplayBinding\TagListDisplayBinding.cs" />
+    <Compile Include="Src\Gui\ViewContent\AppConfig\AppConfigSecundaryViewContent.cs" />
+    <Compile Include="Src\Gui\ViewContent\AppConfig\AppConfigViewContent.cs" />
+    <Compile Include="Src\Gui\ViewContent\AppConfig\AppConfigUserControl.cs" />
+    <Compile Include="Src\Gui\ViewContent\AppConfig\AppConfigUserControl.Designer.cs">
+      <DependentUpon>AppConfigUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\ViewContent\DataSource\DataSourceViewContent.cs" />
+    <Compile Include="Src\Gui\ViewContent\DataSource\DataSourceUserControl.cs" />
+    <Compile Include="Src\Gui\ViewContent\DataSource\DataSourceUserControl.Designer.cs">
+      <DependentUpon>DataSourceUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\ViewContent\DataSource\DataSourceCfg.cs" />
+    <Compile Include="Src\Gui\ViewContent\DataSource\DataSourceCfg.Designer.cs">
+      <DependentUpon>DataSourceCfg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\ViewContent\Driver\DriverUserControl.cs" />
+    <Compile Include="Src\Gui\ViewContent\Driver\DriverUserControl.Designer.cs">
+      <DependentUpon>DriverUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\ViewContent\Driver\DriverViewContent.cs" />
+    <Compile Include="Src\Gui\ViewContent\Security\DeleteControlForm.cs" />
+    <Compile Include="Src\Gui\ViewContent\Security\DeleteControlForm.Designer.cs">
+      <DependentUpon>DeleteControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\ViewContent\Security\GroupForm.cs" />
+    <Compile Include="Src\Gui\ViewContent\Security\GroupForm.Designer.cs">
+      <DependentUpon>GroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\ViewContent\Security\GroupListForm.cs" />
+    <Compile Include="Src\Gui\ViewContent\Security\GroupListForm.Designer.cs">
+      <DependentUpon>GroupListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\ViewContent\Security\RuleForm.cs" />
+    <Compile Include="Src\Gui\ViewContent\Security\RuleForm.Designer.cs">
+      <DependentUpon>RuleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\ViewContent\Security\RuleListForm.cs" />
+    <Compile Include="Src\Gui\ViewContent\Security\RuleListForm.Designer.cs">
+      <DependentUpon>RuleListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\ViewContent\Security\UserForm.cs" />
+    <Compile Include="Src\Gui\ViewContent\Security\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\ViewContent\TagGroup\TagGroupViewContent.cs" />
+    <Compile Include="Src\Gui\ViewContent\TagManager\SelectNewTag.cs" />
+    <Compile Include="Src\Gui\ViewContent\TagManager\SelectNewTag.Designer.cs">
+      <DependentUpon>SelectNewTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\ViewContent\TagManager\TagListViewContent.cs" />
+    <Compile Include="Src\Pads\Project Browser\TreeNodes\TagGroupFileNode.cs" />
+    <Compile Include="Src\Pads\Project Browser\TreeNodes\TagListFileNode.cs" />
+    <Compile Include="Src\ProjectBinding\AimProjectBinding.cs" />
+    <Compile Include="Src\Project\AimTagGroupProjectItem.cs" />
+    <Compile Include="Src\Project\AimItemType.cs" />
+    <EmbeddedResource Include="Src\Commands\FrmNewAimTagGroup.resx">
+      <DependentUpon>FrmNewAimTagGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\ViewContent\AppConfig\AppConfigUserControl.resx">
+      <DependentUpon>AppConfigUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\ViewContent\DataSource\DataSourceUserControl.resx">
+      <DependentUpon>DataSourceUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\ViewContent\DataSource\DataSourceCfg.resx">
+      <DependentUpon>DataSourceCfg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\ViewContent\Driver\DriverUserControl.resx">
+      <DependentUpon>DriverUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\ViewContent\Security\DeleteControlForm.resx">
+      <DependentUpon>DeleteControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\ViewContent\Security\GroupForm.resx">
+      <DependentUpon>GroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\ViewContent\Security\GroupListForm.resx">
+      <DependentUpon>GroupListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\ViewContent\Security\RuleForm.resx">
+      <DependentUpon>RuleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\ViewContent\Security\RuleListForm.resx">
+      <DependentUpon>RuleListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\ViewContent\Security\SecurityUserControl.resx">
+      <DependentUpon>SecurityUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\ViewContent\Security\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\ViewContent\TagGroup\TagGroupUControl.resx">
+      <DependentUpon>TagGroupUControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\ViewContent\TagManager\SelectNewTag.resx">
+      <DependentUpon>SelectNewTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Gui\ViewContent\TagManager\TagManagerUserControl.resx">
+      <DependentUpon>TagManagerUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="AimBinding.addin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Templates\DataSourceFile.xft">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\DefaultApp.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\DefaultAssemblyInfo.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\DefaultDataSource.dsf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\DefaultDriverDatabase.ddb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\DefaultSecurityDatabase.sdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\DefaultTagDatabase.tdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\DefaultTagGroupFile.tgg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\DriverDatabaseFile.xft">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\FormsProject.xpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Compile Include="Configuration\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\ViewContent\Security\SecurityUserControl.cs" />
+    <Compile Include="Src\Gui\ViewContent\Security\SecurityUserControl.Designer.cs">
+      <DependentUpon>SecurityUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\ViewContent\Security\SecurityViewContent.cs" />
+    <Compile Include="Src\Gui\ViewContent\TagGroup\TagGroupUControl.cs" />
+    <Compile Include="Src\Gui\ViewContent\TagGroup\TagGroupUControl.Designer.cs">
+      <DependentUpon>TagGroupUControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Gui\ViewContent\TagManager\TagManagerUserControl.cs" />
+    <Compile Include="Src\Gui\ViewContent\TagManager\TagManagerUserControl.Designer.cs">
+      <DependentUpon>TagManagerUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Pads\Project Browser\TreeNodes\AimProjectNode.cs" />
+    <Compile Include="Src\Pads\Project Browser\TreeNodes\IViewNode.cs" />
+    <Compile Include="Src\Pads\Project Browser\TreeNodes\SecurityNode.cs" />
+    <Compile Include="Src\Pads\Project Browser\TreeNodes\AimTagGroupFolderNode.cs" />
+    <Compile Include="Src\Project\AimProject.cs" />
+    <Compile Include="Src\Project\AimProjectNodeBuilder.cs" />
+    <None Include="Templates\SecurityDatabaseFile.xft">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\TagDatabaseFile.xft">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\TagGroupFile.xft">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Src\Gui" />
+    <Folder Include="Src\Gui\ViewContent" />
+    <Folder Include="Src\Gui\ViewContent\Driver" />
+    <Folder Include="Src\Gui\ViewContent\DataSource" />
+    <Folder Include="Src\Gui\ViewContent\AppConfig" />
+    <Folder Include="Src\Gui\ViewContent\Security" />
+    <Folder Include="Src\Gui\ViewContent\TagGroup" />
+    <Folder Include="Src\Gui\ViewContent\TagManager" />
+    <Folder Include="Src\Commands" />
+    <Folder Include="Src\DisplayBinding" />
+    <Folder Include="Src\Conditions" />
+    <Folder Include="Src\ProjectBinding" />
+    <Folder Include="Src\Pads" />
+    <Folder Include="Src\Pads\Project Browser" />
+    <Folder Include="Src\Pads\Project Browser\TreeNodes" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{8BD52B95-EB55-47BE-B97D-E634935DF9BA}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Template author="Romis Fava" version="1.0">
+	
+	<Config
+		  name        = "TagGroupFile"
+		  icon        = "Icons.32x32.XSLIcon"
+		  category    = "Aimirim"
+		  defaultname = "TagGroup${Number}.tgg"
+		  language    = "Default"/>
+	 
+	<Description>${res:Templates.File.Text.EmptyTextFile.Description}</Description>
+
+	<Files>
+		<File name="${FullName}" language="Default" CopyToOutputDirectory="Always"><![CDATA[<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+</DocumentElement>
+]]></File>
+	</Files>
+	
+	<AdditionalOptions/>
+</Template>

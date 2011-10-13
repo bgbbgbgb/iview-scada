@@ -1,0 +1,148 @@
+﻿<AddIn name        = "Aim binding"
+       author      = "Romis Fava"
+       copyright   = "prj:///doc/copyright.txt"
+       url         = "http://www.aimirim.com"
+       description = "Binding for the Aim project"
+       addInManagerHidden = "preinstalled">
+	
+	
+	<Manifest>
+		<Identity name = "Aimirim.iView"/>
+		<Dependency addin = "ICSharpCode.FormsDesigner" requirePreload = "true"/>
+	</Manifest>
+	
+	
+	<Runtime>
+		<Condition name = "Compare" string = "${Platform}" equals = "Win64">
+			<DisableAddIn message = "This AddIn does not work when SharpDevelop runs as 64-bit process."/>
+		</Condition>
+		
+		<!-- Necessário para abrir um projeto do tipo .ivwproj -->
+		<Import assembly = ":ICSharpCode.SharpDevelop"/>
+		<Import assembly = "$ICSharpCode.CSharpBinding/CSharpBinding.dll"/>
+		<Import assembly = "iViewBinding.dll">
+			<ConditionEvaluator name="FileStateCondition" class="Aimirim.iView.FileStateCondition"/>
+		</Import>
+	</Runtime>
+	
+	<!-- *********************************** -->
+	<!-- Configurações para o LanguageBinding -->
+	<!-- *********************************** -->
+	
+	<Path name = "/SharpDevelop/Workbench/Combine/FileFilter">
+		<FileFilter id           = "iView"
+		            insertbefore = "AllFiles"
+		            name         = "Projeto iView (*.ivwproj)"
+		            class        = "ICSharpCode.SharpDevelop.Project.LoadProject"
+		            extensions   = "*.ivwproj"/>
+	</Path>
+	<Path path = "/SharpDevelop/Workbench/ProjectBindings">
+		<ProjectBinding id                   = "iView"
+		                guid                 = "{890FAFC5-A4CC-4022-AEC2-E58F06D13E36}"
+		                supportedextensions  = ".ivw"
+		                projectfileextension = ".ivwproj"
+		                class                = "Aimirim.iView.AimProjectBinding" />
+	</Path>
+	
+	<Path path = "/SharpDevelop/BackendBindings/ProjectOptions/iView">
+		<OptionPanel id    = "Application"
+		             label = "${res:Dialog.ProjectOptions.ApplicationSettings}"
+		             class = "ICSharpCode.SharpDevelop.Gui.OptionPanels.ApplicationSettings"/>
+		<OptionPanel id    = "ReferencePaths"
+		             label = "${res:Dialog.ProjectOptions.ReferencePaths}"
+		             class = "ICSharpCode.SharpDevelop.Gui.OptionPanels.ReferencePaths"/>
+		<OptionPanel id    = "Signing"
+		             label = "${res:Dialog.ProjectOptions.Signing}"
+		             class = "ICSharpCode.SharpDevelop.Gui.OptionPanels.Signing"/>
+		<OptionPanel id    = "BuildEvents"
+		             label = "${res:Dialog.ProjectOptions.BuildEvents}"
+		             class = "ICSharpCode.SharpDevelop.Gui.OptionPanels.BuildEvents"/>
+		<OptionPanel id    = "BuildOptions"
+		             label = "${res:Dialog.ProjectOptions.BuildOptions}"
+		             class = "CSharpBinding.OptionPanels.BuildOptions"/>
+		<OptionPanel id    = "DebugOptions"
+		             label = "${res:Dialog.ProjectOptions.DebugOptions}"
+		             class = "ICSharpCode.SharpDevelop.Gui.OptionPanels.DebugOptions"/>
+		<!--<OptionPanel id    = "Publish"
+		             label = "${res:Dialog.ProjectOptions.Publish}"
+		             class = "ICSharpCode.SharpDevelop.Gui.OptionPanels.Publish"/>-->
+		<Include id = "AllManaged" path="/SharpDevelop/BackendBindings/ProjectOptions/AllManaged"/>
+	</Path>
+	
+	<!-- Project Explorer tree node builders -->
+	<Path name = "/SharpDevelop/Views/ProjectBrowser/NodeBuilders">
+		<Class id = "AimProjectBuilder"
+		       insertbefore = "DefaultBuilder"
+		       class = "Aimirim.iView.AimProjectNodeBuilder"/>
+	</Path>
+	
+	<Path name = "/SharpDevelop/BackendBindings/Templates">
+		<Directory id = "iView" path = "./Templates" />
+	</Path>
+	
+	<!-- *********************************** -->
+	<!-- Configurações para o DisplayBinding -->
+	<!-- *********************************** -->
+	
+	<Path name = "/SharpDevelop/Workbench/DisplayBindings">
+		<DisplayBinding id = "TagGroupView"
+		                insertbefore = "Text"
+		                class = "Aimirim.iView.TagGroupDisplayBinding"
+		                fileNamePattern = "\.tgg?$" />
+		<DisplayBinding id  = "TagListView"
+		                insertbefore = "Text"
+		                class = "Aimirim.iView.TagListDisplayBinding"
+		                fileNamePattern = "\.tdb?$" />
+		<DisplayBinding id  = "DriverView"
+		                insertbefore = "Text"
+		                class = "Aimirim.iView.DriverDisplayBinding"
+		                fileNamePattern = "\.ddb?$" />
+		<DisplayBinding id  = "SecurityView"
+		                insertbefore = "Text"
+		                class = "Aimirim.iView.SecurityDisplayBinding"
+		                fileNamePattern = "\.sdb?$" />
+		<DisplayBinding id  = "DataSourceView"
+		                insertbefore = "Text"
+		                class = "Aimirim.iView.DataSourceDisplayBinding"
+		                fileNamePattern = "\.dsf?$" />
+		<DisplayBinding id  = "AppConfigView"
+		                type  = "Secondary"
+		                class = "Aimirim.iView.AppConfigSecundaryDisplayBinding"
+		                fileNamePattern = "app.config" />
+<!--		<DisplayBinding id = "AimDialogDesigner"
+		                type  = "Secondary"
+		                class = "Aimirim.iView.AimDialogDesignerDisplayBinding"
+		                fileNamePattern = "\.cs?$"/>-->
+	</Path>
+	
+	<Path name = "/Workspace/Icons">
+		<Icon id         = "TagDatabaseFile"
+		      extensions = ".tdb"
+		      resource   = "Java.Project.ControlLibrary"/>
+		<Icon id         = "DriverDatabaseFile"
+		      extensions = ".ddb"
+		      resource   = "VBNet.Project.UserControl"/>
+		<Icon id         = "SecurityDatabaseFile"
+		      extensions = ".sdb"
+		      resource   = "JScript.File.WebFile"/>
+		<Icon id         = "TagGroupFile"
+		      extensions = ".tgg"
+		      resource   = "Icons.32x32.XSLIcon"/>
+		<Icon id         = "DataSourceFile"
+		      extensions = ".dsf"
+		      resource   = "Icons.16x16.SharpQuery.ViewsRoot"/>
+	</Path>
+	
+	<!-- *********************************** -->
+	<!--  Context menu for especifics nodes  -->
+	<!-- *********************************** -->
+	
+	<Path name = "/SharpDevelop/Pads/ProjectBrowser/ContextMenu/FileNode">
+		<Condition name = "FileStateCondition">
+			<MenuItem id = "SetAsDefault"
+			          label = "Set As Default"
+			          class = "Aimirim.iView.SetAsDefaultCommand"/>
+		</Condition>
+	</Path>
+
+</AddIn>
