@@ -10,7 +10,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <TargetFrameworkProfile />
-    <SignAssembly>False</SignAssembly>
+    <SignAssembly>True</SignAssembly>
     <DelaySign>False</DelaySign>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
@@ -18,9 +18,11 @@
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\Romis Fava\Dados de aplicativos\ICSharpCode/SharpDevelop4.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
-    <OutputPath>..\..\..\..\SharpDevelop4.1\AddIns\ProjectScout\iViewBinding\</OutputPath>
+    <OutputPath>bin\Debug</OutputPath>
     <RunCodeAnalysis>False</RunCodeAnalysis>
     <RunSourceAnalysis>False</RunSourceAnalysis>
+    <AssemblyOriginatorKeyFile>Core.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <RegisterForComInterop>False</RegisterForComInterop>
@@ -58,6 +60,12 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <ItemGroup>
+    <Reference Include="OpcNetApi">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="OpcNetApi.Com">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -317,15 +325,5 @@
     <EmbeddedResource Include="Src\Services\Tag\Sql\SqlTagConfigurator.resx">
       <DependentUpon>SqlTagConfigurator.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\COM Wrapper\OPC NET COM Wrapper.csproj">
-      <Project>{170A5455-A090-4F26-810F-15F71BBF87E6}</Project>
-      <Name>OPC NET COM Wrapper</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OPC NET API\OPC NET API.csproj">
-      <Project>{98B6E5A1-6FED-434E-B568-9C68D5F9959C}</Project>
-      <Name>OPC NET API</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>

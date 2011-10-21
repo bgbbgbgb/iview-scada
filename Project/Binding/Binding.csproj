@@ -20,7 +20,7 @@
     <SignAssembly>false</SignAssembly>
     <DelaySign>False</DelaySign>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
-    <AssemblyOriginatorKeyFile>Aimirim.Bindings.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Aimirim.iView.snk</AssemblyOriginatorKeyFile>
     <RootNamespace>Aimirim.iView</RootNamespace>
     <TargetFrameworkProfile />
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>

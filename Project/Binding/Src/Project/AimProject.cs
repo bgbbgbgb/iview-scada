@@ -64,12 +64,12 @@ namespace Aimirim.iView
 			// Adiciona os TargetsFile
 			AddImport(@"$(MSBuildBinPath)\Microsoft.CSharp.Targets", null);
 			// Inclui a referência ao iView durante a criação de um novo projeto
-			Assembly aimAssembly = Assembly.GetAssembly(typeof(AimProject));
-			string aimAssemblyPath = Path.GetDirectoryName(aimAssembly.Location);
-			string aimAssemblyFullName = Path.Combine(aimAssemblyPath, "Aimirim.iView.dll");
-			ReferenceProjectItem rpi = new ReferenceProjectItem(this, "Aimirim.iView");
-			rpi.HintPath = aimAssemblyFullName;
-			ProjectService.AddProjectItem(this, rpi);
+//			Assembly aimAssembly = Assembly.GetAssembly(typeof(AimProject));
+//			string aimAssemblyPath = Path.GetDirectoryName(aimAssembly.Location);
+//			string aimAssemblyFullName = Path.Combine(aimAssemblyPath, "Aimirim.iView.dll");
+//			ReferenceProjectItem rpi = new ReferenceProjectItem(this, "Aimirim.iView");
+//			rpi.HintPath = aimAssemblyFullName;
+//			ProjectService.AddProjectItem(this, rpi);
 		}
 		#endregion
 

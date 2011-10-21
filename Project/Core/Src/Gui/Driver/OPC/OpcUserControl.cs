@@ -4,8 +4,6 @@ using System.Xml;
 using System;
 using System.IO;
 using System.Windows.Forms;
-using Opc;
-using Opc.Da;
 
 namespace Aimirim.iView
 {
