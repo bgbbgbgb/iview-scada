@@ -197,6 +197,13 @@ namespace Aimirim.iView
 					{
 						string[] itemIdSplited = itemName.Split(']');
 						string[] addressSplited;
+						string topic = "";
+						
+						//Encontra o nome do topico
+						if (itemName.Contains(']')) {
+							topic = itemName.Split(']')[0].Substring(1);
+						}
+						
 						if (itemIdSplited.Length > 1)
 						{
 							addressSplited = itemIdSplited[1].Split(':');
@@ -210,7 +217,7 @@ namespace Aimirim.iView
 						Opc.Da.Subscription opcDaGroup = null;
 						foreach (Opc.Da.Subscription opcDaGrp in _opcDaServer.Subscriptions)
 						{
-							if (opcDaGrp.Name == addressSplited[0])
+							if (opcDaGrp.Name == topic + addressSplited[0])
 							{
 								opcDaGroup = opcDaGrp;
 							}
@@ -220,7 +227,7 @@ namespace Aimirim.iView
 						{
 							Opc.Da.SubscriptionState groupState = new Opc.Da.SubscriptionState();
 							groupState.ClientHandle = Guid.NewGuid().ToString();
-							groupState.Name = addressSplited[0];
+							groupState.Name = topic + addressSplited[0];
 							groupState.UpdateRate = 100;
 							
 							opcDaGroup = (Opc.Da.Subscription)_opcDaServer.CreateSubscription(groupState);
