@@ -34,5 +34,15 @@ namespace Aimirim.iView
 			return new DataSourceViewContent(file);
 		}
 		#endregion
+		
+		public bool IsPreferredBindingForFile(string fileName)
+		{
+			return true;
+		}
+		
+		public double AutoDetectFileContent(string fileName, Stream fileContent, string detectedMimeType)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

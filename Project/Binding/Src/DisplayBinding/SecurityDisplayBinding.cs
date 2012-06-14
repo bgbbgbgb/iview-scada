@@ -27,5 +27,15 @@ namespace Aimirim.iView
 			return new SecurityViewContent(file);
 		}
 		#endregion
+		
+		public bool IsPreferredBindingForFile(string fileName)
+		{
+			return true;
+		}
+		
+		public double AutoDetectFileContent(string fileName, System.IO.Stream fileContent, string detectedMimeType)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
