@@ -228,7 +228,7 @@ namespace Aimirim.iView
 							Opc.Da.SubscriptionState groupState = new Opc.Da.SubscriptionState();
 							groupState.ClientHandle = Guid.NewGuid().ToString();
 							groupState.Name = topic + addressSplited[0];
-							groupState.UpdateRate = 100;
+//							groupState.UpdateRate = 100;
 							
 							opcDaGroup = (Opc.Da.Subscription)_opcDaServer.CreateSubscription(groupState);
 							//opcDaGroup.DataChanged += new Opc.Da.DataChangedEventHandler(OpcDataChanged);
@@ -248,8 +248,8 @@ namespace Aimirim.iView
 						opcDaItem.ItemName = itemName;
 //						opcDaItem.MaxAgeSpecified = true;
 //						opcDaItem.MaxAge = 10;
-						opcDaItem.SamplingRateSpecified = true;
-						opcDaItem.SamplingRate = 100;
+//						opcDaItem.SamplingRateSpecified = true;
+//						opcDaItem.SamplingRate = 100;
 						
 						opcDaGroup.AddItems(new Opc.Da.Item[] { opcDaItem });
 
@@ -332,17 +332,17 @@ namespace Aimirim.iView
 //					sub.Refresh();
 //				}
 
-				if (_opcDaServer.Subscriptions.Count > 0)
-				{
-					_opcDaServer.Subscriptions[_subsCount].Refresh();
-					_subsCount++;
-
-					if (_subsCount == _opcDaServer.Subscriptions.Count)
-					{
-						_subsCount = 0;
-					}
-
-				}
+//				if (_opcDaServer.Subscriptions.Count > 0)
+//				{
+//					_opcDaServer.Subscriptions[_subsCount].Refresh();
+//					_subsCount++;
+//
+//					if (_subsCount == _opcDaServer.Subscriptions.Count)
+//					{
+//						_subsCount = 0;
+//					}
+//
+//				}
 			}
 			catch (Exception ex)
 			{
