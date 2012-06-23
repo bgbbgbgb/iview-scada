@@ -22,7 +22,8 @@
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
     <AssemblyOriginatorKeyFile>Aimirim.iView.snk</AssemblyOriginatorKeyFile>
     <RootNamespace>Aimirim.iView</RootNamespace>
-    <TargetFrameworkProfile />
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <OutputPath>bin\Debug</OutputPath>
   </PropertyGroup>

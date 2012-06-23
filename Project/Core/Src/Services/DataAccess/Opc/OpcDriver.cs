@@ -22,6 +22,7 @@ namespace Aimirim.iView
 		private List<OpcAddress> _addrList;
 		private OpcUserControl _control;
 		private int _subsCount = 0;
+		private bool _firstTime = true;
 		
 		private Opc.Da.Server _opcDaServer;
 		private BackgroundWorker _backgroundWorker = new BackgroundWorker();
@@ -106,7 +107,7 @@ namespace Aimirim.iView
 					_backgroundWorker.RunWorkerAsync();
 				};
 
-				_timerRefresh.Interval = 1000;
+				_timerRefresh.Interval = 5000;
 				_timerRefresh.Start();
 			}
 		}
@@ -228,7 +229,7 @@ namespace Aimirim.iView
 							Opc.Da.SubscriptionState groupState = new Opc.Da.SubscriptionState();
 							groupState.ClientHandle = Guid.NewGuid().ToString();
 							groupState.Name = topic + addressSplited[0];
-//							groupState.UpdateRate = 100;
+//							groupState.UpdateRate = 250;
 							
 							opcDaGroup = (Opc.Da.Subscription)_opcDaServer.CreateSubscription(groupState);
 							//opcDaGroup.DataChanged += new Opc.Da.DataChangedEventHandler(OpcDataChanged);
@@ -247,7 +248,7 @@ namespace Aimirim.iView
 						opcDaItem.ClientHandle = Guid.NewGuid().ToString();
 						opcDaItem.ItemName = itemName;
 //						opcDaItem.MaxAgeSpecified = true;
-//						opcDaItem.MaxAge = 10;
+//						opcDaItem.MaxAge = -1;
 //						opcDaItem.SamplingRateSpecified = true;
 //						opcDaItem.SamplingRate = 100;
 						
@@ -327,26 +328,32 @@ namespace Aimirim.iView
 		{
 			try
 			{
-//				foreach (Subscription sub in _opcDaServer.Subscriptions)
-//				{
-//					sub.Refresh();
-//				}
+				if (_firstTime)
+				{
+					_firstTime = false;
+					foreach (Subscription sub in _opcDaServer.Subscriptions)
+					{
+						sub.Refresh();
+					}
+				}
+				else
+				{
+					if (_opcDaServer.Subscriptions.Count > 0)
+					{
+						_opcDaServer.Subscriptions[_subsCount].Refresh();
+						_subsCount++;
 
-//				if (_opcDaServer.Subscriptions.Count > 0)
-//				{
-//					_opcDaServer.Subscriptions[_subsCount].Refresh();
-//					_subsCount++;
-//
-//					if (_subsCount == _opcDaServer.Subscriptions.Count)
-//					{
-//						_subsCount = 0;
-//					}
-//
-//				}
+						if (_subsCount == _opcDaServer.Subscriptions.Count)
+						{
+							_subsCount = 0;
+						}
+
+					}
+				}
 			}
 			catch (Exception ex)
 			{
-				//MessageBox.Show(ex.Message);
+				Console.WriteLine(ex.Message);
 			}
 		}
 

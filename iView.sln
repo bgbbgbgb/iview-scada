@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-# SharpDevelop 4.3.0.8827-alpha
+# SharpDevelop 4.1.0.7659-alpha
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Project\Core\Core.csproj", "{8BD52B95-EB55-47BE-B97D-E634935DF9BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding", "Project\Binding\Binding.csproj", "{7A5360E2-642B-4C4B-80DE-2C4AF7CA20AD}"
