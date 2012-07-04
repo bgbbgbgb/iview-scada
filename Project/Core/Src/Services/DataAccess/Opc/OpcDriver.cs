@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using System.Timers;
+﻿using System.Timers;
 using System.Windows.Forms;
 
 using Opc;
@@ -107,8 +106,8 @@ namespace Aimirim.iView
 					_backgroundWorker.RunWorkerAsync();
 				};
 
-				_timerRefresh.Interval = 5000;
-				_timerRefresh.Start();
+				_timerRefresh.Interval = 60000;
+				//_timerRefresh.Start();
 			}
 		}
 		#endregion
@@ -235,6 +234,17 @@ namespace Aimirim.iView
 							//opcDaGroup.DataChanged += new Opc.Da.DataChangedEventHandler(OpcDataChanged);
 							opcDaGroup.DataChanged += delegate(object subscriptionHandle, object requestHandle, ItemValueResult[] values)
 							{
+//								BackgroundWorker back = new BackgroundWorker();
+//								back.DoWork += delegate(object sender, DoWorkEventArgs e)
+//								{
+//									foreach (Opc.Da.ItemValueResult ivr in values)
+//									{
+//										OpcAddress adr = Find(ivr.ItemName);
+//										adr.SetValue(ivr.Value.ToString());
+//										OnDataChanged(new DataChangedEventArgs(ivr.ItemName, ivr.Value));
+//									}
+//								};
+//								back.RunWorkerAsync();
 								foreach (Opc.Da.ItemValueResult ivr in values)
 								{
 									OpcAddress adr = Find(ivr.ItemName);
@@ -247,10 +257,10 @@ namespace Aimirim.iView
 						Opc.Da.Item opcDaItem = new Opc.Da.Item();
 						opcDaItem.ClientHandle = Guid.NewGuid().ToString();
 						opcDaItem.ItemName = itemName;
-//						opcDaItem.MaxAgeSpecified = true;
-//						opcDaItem.MaxAge = -1;
-//						opcDaItem.SamplingRateSpecified = true;
-//						opcDaItem.SamplingRate = 100;
+						opcDaItem.MaxAgeSpecified = true;
+						opcDaItem.MaxAge = 100;
+						opcDaItem.SamplingRateSpecified = true;
+						opcDaItem.SamplingRate = 10;
 						
 						opcDaGroup.AddItems(new Opc.Da.Item[] { opcDaItem });
 
